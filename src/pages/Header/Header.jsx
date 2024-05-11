@@ -24,12 +24,12 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
 
-                    <li><NavLink to="/">Home</NavLink></li>
-                    <li><NavLink to="/quries">Queries</NavLink></li>
-                    <li><NavLink to="/recommendations">Recommendations
+                    <li><NavLink to="/" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'} >Home</NavLink></li>
+                    <li><NavLink to="/quries" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>Queries</NavLink></li>
+                    <li><NavLink to="/recommendations" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>Recommendations
                         For Me</NavLink></li>
-                    <li><NavLink to="/myQueries">My Queries</NavLink></li>
-                    <li><NavLink to="/myRecommendations">My recommendations</NavLink></li>
+                    <li><NavLink to="/myQueries" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>My Queries</NavLink></li>
+                    <li><NavLink to="/myRecommendations" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>My recommendations</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end">
