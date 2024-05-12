@@ -1,5 +1,6 @@
 import React from 'react';
 import Reviews from '../Reviews/Reviews';
+import Stats from '../Stats/Stats';
 
 const Home = () => {
     return (
@@ -7,6 +8,7 @@ const Home = () => {
 
 
             <Reviews></Reviews>
+            <Stats></Stats>
 
         </div>
     );
