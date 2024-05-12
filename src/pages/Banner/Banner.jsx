@@ -7,7 +7,7 @@ const Banner = () => {
     return (
         <div >
             {/* <h1 className='' >We are best known for our public Q&A platform that millions of people visit every month to ask questions, learn, and share technical knowledge.</h1> */}
-            <div className="hero min-h-[500px]" style={{ backgroundImage: `url(${bg})` }}>
+            <div className="hero min-h-[200px]" style={{ backgroundImage: `url(${bg})` }}>
                 <div className="hero-overlay bg-opacity-40"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
