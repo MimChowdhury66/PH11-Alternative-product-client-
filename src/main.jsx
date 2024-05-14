@@ -17,7 +17,7 @@ import Register from './pages/Register/Register';
 import AuthProvider from './AuthProvider/AuthProvider';
 import MyQueries from './pages/MyQueries/MyQueries';
 import AddQuery from './pages/AddQuery/AddQuery';
-
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,11 +30,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/myQueries',
-        element:<MyQueries></MyQueries>
+        element: <PrivateRoute><MyQueries></MyQueries></PrivateRoute>
       },
       {
         path: '/addQuery',
-        element:<AddQuery></AddQuery>
+        element: <AddQuery></AddQuery>
       },
       {
         path: '/login',
