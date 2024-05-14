@@ -12,34 +12,40 @@ const AddQuery = () => {
     } = useForm();
 
     const onSubmit = data => {
-        console.log(data);
-        // const newTourist = data;
-        // console.log(newTourist);
-        // const { } = data;
-        // const { email } = user;
-        // console.log(email)
-        // const time = Date.now()
-        // console.log(time)
-        // const newPost = {}
+
+        const { productImageURL, boycottingReasonDetails, productBrand, productName, queryTitle } = data;
+        const { email, displayName, photoURL } = user;
+
+        const postedTimestamp = new Date().toLocaleString("en-Us", {
+            year: "numeric",
+            month: "numeric",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false
+        });
+        const newPost = { productImageURL, boycottingReasonDetails, productBrand, productName, queryTitle, postedTimestamp, email, displayName, photoURL, recommmendationCount: 0 };
+        console.log(newPost)
 
         // send data
-        // fetch('', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(newTourist)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.insertedId) {
-        //             swal({
-        //                 icon: "success",
-        //                 title: "Tourist Spot saved successfully",
-        //             });
-        //         }
-        //     })
+        fetch('http://localhost:5000/queries', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newPost)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    swal({
+                        icon: "success",
+                        title: "Your Query saved successfully",
+                    });
+                }
+            })
 
     }
 

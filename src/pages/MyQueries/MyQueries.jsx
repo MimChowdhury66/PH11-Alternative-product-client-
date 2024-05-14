@@ -18,10 +18,10 @@ const MyQueries = () => {
             </div>
 
             {/* my query section */}
-            <div className='mt-5 text-center text-xl text-blue-400 font-bold'>
-                <h1>My All Query's </h1>
+            <div >
+                <h1 className='mt-5 text-center text-xl text-blue-400 font-bold'>My All Queries </h1>
                 <div>
-                    
+
                 </div>
             </div>
 
