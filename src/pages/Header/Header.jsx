@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../public/logo.png'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { Tooltip } from 'react-tooltip';
+
 const Header = () => {
     const { logout, user } = useContext(AuthContext);
     const [theme, setTheme] = useState('light');
@@ -30,10 +32,10 @@ const Header = () => {
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[4] p-2 shadow bg-base-100 rounded-box w-52">
                         <li><NavLink to="/" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>Home</NavLink></li>
                         <li><NavLink to="/quries" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>Queries</NavLink></li>
-                        {user?.email ? <>
+                        {user ? <>
 
                             <li><NavLink to="/recommendations" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>Recommendations
                                 For Me</NavLink></li>
@@ -56,14 +58,26 @@ const Header = () => {
 
                     <li><NavLink to="/" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'} >Home</NavLink></li>
                     <li><NavLink to="/quries" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>Queries</NavLink></li>
+                    <Tooltip id="my-tooltip" />
 
-                    {user?.email ? <>
+                    {user ? <>
 
                         <li><NavLink to="/recommendations" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>Recommendations
                             For Me</NavLink></li>
                         <li><NavLink to="/myQueries" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>My Queries</NavLink></li>
                         <li><NavLink to="/myRecommendations" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>My recommendations</NavLink></li>
-                        <li><button onClick={logout} className="btn lg:text-xl text-black  bg-blue-200 ">Logout</button> </li>
+
+                        <div data-tooltip-id="my-tooltip" data-tooltip-place="right" data-tooltip-content={user?.displayName || 'name not found'} className="dropdown dropdown-end  z-[4]" >
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar " >
+                                <div className="w-10 rounded-full "  >
+                                    <img src={user?.photoURL || 'https://avatars.githubusercontent.com/u/86664820?v=4'} alt="" />
+
+                                </div>
+                            </label>
+                            <ul tabIndex={0} className="dropdown-content z-[4] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                <li><button onClick={logout} className="btn btn-sm btn-ghost">Logout</button></li>
+                            </ul>
+                        </div>
                     </>
                         :
 

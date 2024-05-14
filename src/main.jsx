@@ -15,6 +15,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Register from './pages/Register/Register';
 import AuthProvider from './AuthProvider/AuthProvider';
+import MyQueries from './pages/MyQueries/MyQueries';
+import AddQuery from './pages/AddQuery/AddQuery';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/myQueries',
+        element:<MyQueries></MyQueries>
+      },
+      {
+        path: '/addQuery',
+        element:<AddQuery></AddQuery>
       },
       {
         path: '/login',
