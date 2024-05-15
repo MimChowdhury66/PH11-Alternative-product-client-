@@ -7,7 +7,7 @@ import swal from 'sweetalert';
 import { useParams } from 'react-router-dom';
 const Update = () => {
     const { id } = useParams();
-    console.log(id);
+    // console.log(id);
     const [queries, setQueries] = useState({});
     const { _id, productImageURL, boycottingReasonDetails, productBrand, productName, queryTitle } = queries;
     // console.log(queries)
@@ -71,7 +71,7 @@ const Update = () => {
 
     return (
         <div>
-            <h1 className='text-center text-xl text-blue-400 font-bold mb-6'>Update Your Query Here</h1>
+            <h1 className='text-center text-xl text-blue-400 font-bold mb-6 animate__animated animate__backInUp'>Update Your Query Here</h1>
 
 
             <div>

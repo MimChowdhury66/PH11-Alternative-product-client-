@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Queries = () => {
     const [queries, setQueries] = useState([]);
+
     // const { user } = useContext(AuthContext);
     // console.log(user)
     useEffect(() => {
@@ -54,8 +55,8 @@ const Queries = () => {
                                     <p>Total Recommendations: {query.recommmendationCount} </p>
                                 </div>
 
-                                <button className='btn border text-white  bg-orange-400'>
-                                    Recommend Now </button>
+                                <Link to={`/queryDetails/${query._id}`}>  <button className='btn border text-white  bg-orange-400'>
+                                    Recommend Now </button></Link>
 
                             </div>
                         </div>)

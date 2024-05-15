@@ -20,6 +20,7 @@ import AddQuery from './pages/AddQuery/AddQuery';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import Queries from './pages/Queries/Queries';
 import Update from './pages/Update/Update';
+import QueryDetails from './pages/QueryDetails/QueryDetails';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/addQuery',
-        element: <AddQuery></AddQuery>
+        element: <PrivateRoute><AddQuery></AddQuery></PrivateRoute>
       },
       {
         path: '/queries',
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: '/updateQuery/:id',
         element: <Update></Update>
+      },
+      {
+        path: '/queryDetails/:id',
+        element: <PrivateRoute><QueryDetails></QueryDetails></PrivateRoute>
       },
       {
         path: '/login',

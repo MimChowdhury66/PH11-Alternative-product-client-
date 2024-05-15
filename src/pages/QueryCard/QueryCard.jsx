@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const QueryCard = ({ query,handleDelete }) => {
+const QueryCard = ({ query, handleDelete }) => {
 
     const { _id, productImageURL, boycottingReasonDetails, productBrand, productName, queryTitle, postedTimestamp, displayName, email, photoURL } = query;
     // console.log(query)
 
-    
+
 
     return (
         <div>
@@ -34,7 +34,7 @@ const QueryCard = ({ query,handleDelete }) => {
                     </div>
                     <div className="space-y-3  ">
                         <div className='lg:flex grid justify-center gap-2'>
-                            <button className='btn'>View Details</button>
+                            <Link to={`/queryDetails/${_id}`}> <button className='btn'>View Details</button></Link>
                             <Link to={`/updateQuery/${_id}`}> <button className='btn text-white  bg-orange-400'>Update Query</button></Link>
                             <button onClick={() => handleDelete(_id)} className='btn'>Delete</button>
                         </div>

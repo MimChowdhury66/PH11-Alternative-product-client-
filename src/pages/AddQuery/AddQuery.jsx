@@ -51,7 +51,7 @@ const AddQuery = () => {
 
     return (
         <div>
-            <h1 className='text-center text-xl text-blue-400 font-bold mb-6'>Add Your Query Here</h1>
+            <h1 className='text-center text-xl text-blue-400 font-bold mb-6 animate__animated animate__backInUp'>Add Your Query Here</h1>
 
 
             <div>
