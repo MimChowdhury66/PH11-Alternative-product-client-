@@ -13,7 +13,7 @@ const Banner = () => {
                     <div className="max-w-md">
                         <h1 className="mb-5 text-5xl font-bold animate__animated animate__fadeInDown">Informa<span className='text-blue-500'>T</span>ica</h1>
                         <p className="mb-5 font-bold">We’re best known for our public Q&A platform that millions of people visit every month to ask questions, learn, and share information.</p>
-                        <Link to='/quries'> <button className="btn bg-blue-400 text-black">All Queries</button></Link>
+                        <Link to='/queries'> <button className="btn bg-blue-400 text-black">All Queries</button></Link>
                     </div>
                 </div>
             </div>

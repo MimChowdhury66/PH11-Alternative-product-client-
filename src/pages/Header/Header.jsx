@@ -57,7 +57,7 @@ const Header = () => {
                 <ul className="menu menu-horizontal px-1">
 
                     <li><NavLink to="/" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'} >Home</NavLink></li>
-                    <li><NavLink to="/quries" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>Queries</NavLink></li>
+                    <li><NavLink to="/queries" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>Queries</NavLink></li>
                     <Tooltip id="my-tooltip" />
 
                     {user ? <>
