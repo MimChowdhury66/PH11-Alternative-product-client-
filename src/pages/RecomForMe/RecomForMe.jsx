@@ -10,7 +10,7 @@ const RecomForMe = () => {
     const { user } = useContext(AuthContext);
     // console.log(user)
     useEffect(() => {
-        fetch('http://localhost:5000/recommendation')
+        fetch('https://informatica-server.vercel.app/recommendation')
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

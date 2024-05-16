@@ -7,7 +7,7 @@ const RecentQuery = () => {
     // const { user } = useContext(AuthContext);
     // console.log(user)
     useEffect(() => {
-        fetch('http://localhost:5000/queries')
+        fetch('https://informatica-server.vercel.app/queries')
             .then(res => res.json())
             .then(data => {
                 setQueries(data)

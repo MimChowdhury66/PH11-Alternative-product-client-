@@ -13,14 +13,14 @@ const QueryDetails = () => {
     // console.log(queries)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/queries/${id}`)
+        fetch(`https://informatica-server.vercel.app/queries/${id}`)
             .then(res => res.json())
             .then(data => setQueries(data)
             )
 
     }, [id]);
     useEffect(() => {
-        fetch('http://localhost:5000/recommendation')
+        fetch('https://informatica-server.vercel.app/recommendation')
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
@@ -59,7 +59,7 @@ const QueryDetails = () => {
         // console.log(newPost)
 
         // send data
-        fetch('http://localhost:5000/recommendation', {
+        fetch('https://informatica-server.vercel.app/recommendation', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

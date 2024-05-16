@@ -13,7 +13,7 @@ const Update = () => {
     // console.log(queries)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/queries/${id}`)
+        fetch(`https://informatica-server.vercel.app/queries/${id}`)
             .then(res => res.json())
             .then(data => setQueries(data)
             )
@@ -46,7 +46,7 @@ const Update = () => {
         console.log(newPost)
 
         // update data
-        fetch(`http://localhost:5000/queries/${id}`, {
+        fetch(`https://informatica-server.vercel.app/queries/${id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

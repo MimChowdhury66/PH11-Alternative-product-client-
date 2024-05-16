@@ -9,7 +9,7 @@ const MyQueries = () => {
     const { user } = useContext(AuthContext);
     // console.log(user)
     useEffect(() => {
-        fetch(`http://localhost:5000/queries?email=${user.email}`)
+        fetch(`https://informatica-server.vercel.app/queries?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setQueries(data)
@@ -30,7 +30,7 @@ const MyQueries = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/queries/${id}`, {
+                    fetch(`https://informatica-server.vercel.app/queries/${id}`, {
                         method: 'DELETE',
 
                     })

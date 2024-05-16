@@ -29,7 +29,7 @@ const AddQuery = () => {
         console.log(newPost)
 
         // send data
-        fetch('http://localhost:5000/queries', {
+        fetch('https://informatica-server.vercel.app/queries', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
