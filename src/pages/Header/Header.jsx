@@ -62,7 +62,7 @@ const Header = () => {
 
                     {user ? <>
 
-                        <li><NavLink to="/recommendations" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>Recommendations
+                        <li><NavLink to="/recommendationsForMe" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>Recommendations
                             For Me</NavLink></li>
                         <li><NavLink to="/myQueries" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>My Queries</NavLink></li>
                         <li><NavLink to="/myRecommendations" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>My recommendations</NavLink></li>

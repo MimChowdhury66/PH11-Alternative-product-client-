@@ -23,7 +23,7 @@ const QueryDetails = () => {
         fetch('http://localhost:5000/recommendation')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 const filterRec = data.filter(recommendation => recommendation.queryId === id);
                 setRecommendations(filterRec)
             }
@@ -56,7 +56,7 @@ const QueryDetails = () => {
             hour12: false
         });
         const newPost = { queryId, queryUserEmail, queryUserName, recommendedProductImageURL, recommendationTitle, recommendationReason, recommendedProductName, queryUserPhoto, queryTitle, postedTimestamp, email, displayName, photoURL, recommmendationCount: 0 };
-        console.log(newPost)
+        // console.log(newPost)
 
         // send data
         fetch('http://localhost:5000/recommendation', {

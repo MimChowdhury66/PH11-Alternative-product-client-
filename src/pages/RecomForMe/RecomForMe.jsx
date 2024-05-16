@@ -1,8 +1,10 @@
 import React from 'react';
-import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { useContext, useEffect, useState } from 'react';
 
-const MyRecommendation = () => {
+const RecomForMe = () => {
+
+
     const [recommendations, setRecommendations] = useState([]);
 
     const { user } = useContext(AuthContext);
@@ -12,7 +14,7 @@ const MyRecommendation = () => {
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
-                const filterRec = data.filter(recommendation => recommendation.email === user.email);
+                const filterRec = data.filter(recommendation => recommendation.queryUserEmail === user.email);
                 setRecommendations(filterRec)
             }
             )
@@ -20,7 +22,7 @@ const MyRecommendation = () => {
     }, []);
     return (
         <div>
-            <h1 className='text-center text-xl text-blue-400 font-bold mb-6 animate__animated animate__backInUp'>My Recommendations</h1>
+            <h1 className='text-center text-xl text-blue-400 font-bold mb-6 animate__animated animate__backInUp'>Recommendations For Me</h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
                     {/* head */}
@@ -47,12 +49,7 @@ const MyRecommendation = () => {
                                     <td>{recommendation.recommendationReason} </td>
                                     <td><img src={recommendation.recommendedProductImageURL} alt="" /></td>
 
-                                    <td className="flex gap-2 m-2">
 
-                                        <button
-                                            // onClick={() => handleDelete(spot._id)}
-                                            className="btn text-white  bg-black ">Delete</button>
-                                    </td>
                                 </tr>
                             ))
                         }
@@ -64,9 +61,8 @@ const MyRecommendation = () => {
                     </tbody>
                 </table>
             </div>
-
         </div>
     );
 };
 
-export default MyRecommendation;
+export default RecomForMe;
