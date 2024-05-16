@@ -21,6 +21,7 @@ import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import Queries from './pages/Queries/Queries';
 import Update from './pages/Update/Update';
 import QueryDetails from './pages/QueryDetails/QueryDetails';
+import MyRecommendation from './pages/MyRecommendation/MyRecommendation';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: '/queryDetails/:id',
         element: <PrivateRoute><QueryDetails></QueryDetails></PrivateRoute>
+      },
+      {
+        path: '/myRecommendations',
+        element: <PrivateRoute><MyRecommendation></MyRecommendation></PrivateRoute>
       },
       {
         path: '/login',
