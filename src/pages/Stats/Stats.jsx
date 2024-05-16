@@ -8,7 +8,7 @@ const Stats = () => {
 
 
         <div>
-            <h1 className='lg:text-4xl font-bold text-center text-blue-400  animate__animated animate__backInUp'>Our system and tools enable people to ask, <br /> share at anywhere.</h1>
+            <h1 className='lg:text-4xl font-bold text-center text-blue-400  animate__animated animate__backInUp'>Our system and tools enable people to ask, <br /> share at anywhere. Have Any query?</h1>
             <div>
                 <section className="p-6 my-6 dark:bg-gray-100 dark:text-gray-800 bg-gray-100">
 
