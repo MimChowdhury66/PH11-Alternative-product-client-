@@ -1,10 +1,11 @@
 import React from 'react';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const MyRecommendation = () => {
     const [recommendations, setRecommendations] = useState([]);
-
+    // const { queryId } = recommendations;
     const { user } = useContext(AuthContext);
     // console.log(user)
     useEffect(() => {
@@ -18,6 +19,46 @@ const MyRecommendation = () => {
             )
 
     }, []);
+
+    const handleDelete = (id, queryId) => {
+        // console.log(id)
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    fetch(`http://localhost:5000/recommendation?id=${id}&queryId=${queryId} `, {
+                        method: 'DELETE',
+
+                    })
+
+
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data)
+                            if (data.deletedCount > 0) {
+                                Swal.fire(
+                                    {
+                                        icon: "success",
+                                        title: "Query deleted",
+                                    }
+                                )
+                                const remaining = recommendations.filter(recommendation => recommendation._id !== id);
+                                console.log(remaining, id)
+                            }
+                        })
+                }
+            })
+    }
+
+
+
     return (
         <div>
             <h1 className='text-center text-xl text-blue-400 font-bold mb-6 animate__animated animate__backInUp'>My Recommendations</h1>
@@ -49,8 +90,7 @@ const MyRecommendation = () => {
 
                                     <td className="flex gap-2 m-2">
 
-                                        <button
-                                            // onClick={() => handleDelete(spot._id)}
+                                        <button onClick={() => handleDelete(recommendation._id, recommendation.queryId)}
                                             className="btn text-white  bg-black ">Delete</button>
                                     </td>
                                 </tr>
