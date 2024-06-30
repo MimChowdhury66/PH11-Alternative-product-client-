@@ -1,5 +1,5 @@
 # Informatica
-Live site url: 
+Live site url: https://alternative-product-ec62d.web.app
 
 ## Motto- It is an Alternative Product Information System. Where users can Add/update/Delete his own Query about a product in The System
 
